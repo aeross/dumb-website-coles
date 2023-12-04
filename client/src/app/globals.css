@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* colour palette */
+  --primary-bg: rgb(255, 228, 232);
+  --primary: lightpink;
+  --primary-text: rgb(150, 3, 3);
+  --secondary-bg: rgb(250, 240, 240);
+  --secondary: rgb(225, 215, 215);
+}
+
+body {
+  background-color: var(--primary-bg);
+}
+
+#heading {
+  color: var(--primary-text);
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* -------------------------------------------------------- */
+/* FORMS */
+/* -------------------------------------------------------- */
+#form-bg {
+  background-color: var(--secondary-bg);
+  border-radius: 20px;
+  border: 2px solid var(--primary);
+  box-shadow: 2px 2px 8px 0px var(--primary);
+
+  width: 45%;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#form-bg-large {
+  background-color: var(--primary);
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px 0px var(--primary);
+
+  width: 65%;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px;
+}
+
+#form-input {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#form-button {
+  padding-top: 10px;
+  padding-left: 2px;
+}
+
+.input-text {
+  background-color: var(--secondary);
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+
+.input-text:focus {
+  border: 2px solid var(--primary-text);
+}
+
+#input-submit {
+  box-shadow: 1px 1px 4px 0px var(--primary);
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-weight: bold;
+  padding: 8px 18px;
+  border-radius: 10px;
+}
+
+#input-submit:hover {
+  background-color: var(--primary-text);
+  color: var(--primary-bg);
+}
