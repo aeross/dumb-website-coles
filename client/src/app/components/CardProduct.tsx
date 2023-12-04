@@ -5,8 +5,8 @@ import React from 'react'
 function Card({ product }: {product: Product}) {
     return (<>
 <div>
-    <div className="border-2 rounded-xl hover:shadow-md bg-slate-50 h-full flex flex-col justify-between">
-        <div>
+    <div className="rounded-xl hover:border-2 hover:shadow-md hover:bg-slate-100 bg-slate-50 h-full flex flex-col justify-between">
+        <Link href="/products" className="hover:cursor-pointer">
             <div>
                 <img src={product.thumbnail} alt="image" className="rounded-t-lg" />
             </div>
@@ -15,8 +15,8 @@ function Card({ product }: {product: Product}) {
                 <p className="text-md">{product.price}</p>
                 <p className="text-sm">{product.tags}</p>
             </div>
-        </div>
-        <Link href="/login"><button className="bg-blue-200 px-4 py-2 m-2 rounded-md">click me</button></Link>
+        </Link>
+        <Link href={`/products/${product.slug}`} className="m-2"><button id="input-buy">click me</button></Link>
     </div>
 </div>
     </>)

@@ -1,13 +1,20 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=13136183&assignment_repo_type=AssignmentRepo)
+
 # My eCommerce App
+
+# PROJECT INFO
+
+-   theme
+
+My theme is grocery store. Inspired by [Coles](https://www.coles.com.au/).
 
 ## Tujuan Pembelajaran
 
-- Student mampu membuat aplikasi server dengan menggunakan menggunakan Typescript, NEXT.js dan melakukan proses CRUD dengan database MongoDB
-- Student mampu membuat web aplikasi dengan menggunakan framework NEXT.js
-- Student mampu menghandle navigasi pada NEXT.js
-- Student mampu menghandle authentikasi pada NEXT.js
-- Student mampu mengimplementasikan CSR & SSR pada NEXT.js
+-   Student mampu membuat aplikasi server dengan menggunakan menggunakan Typescript, NEXT.js dan melakukan proses CRUD dengan database MongoDB
+-   Student mampu membuat web aplikasi dengan menggunakan framework NEXT.js
+-   Student mampu menghandle navigasi pada NEXT.js
+-   Student mampu menghandle authentikasi pada NEXT.js
+-   Student mampu mengimplementasikan CSR & SSR pada NEXT.js
 
 ## Aturan Umum
 
@@ -23,31 +30,31 @@ Pada challenge ini, kamu diminta untuk membuat aplikasi client-server dengan det
 
 ### Halaman
 
-- [ ] Halaman Register
-- [ ] Halaman Login
-- [ ] Halaman Home
-  - [ ] Banner Promo
-  - [ ] Detail info Ecommerce
-  - [ ] Featured Product (5-10 product) + “see-all”
-- [ ] Halaman Product
-- [ ] List Product
-  - [ ] Fitur Search
-  - [ ] Fitur Pagination (menggunakan infinite scroll)
-  - [ ] Fitur Add to wishlist
-- [ ] Halaman Detail Product
-  - [ ] Fitur Add to wishlist
-  - [ ] Implementasi Meta Tag di Head sesuai detail product
-- [ ] Halaman Wishlist Product
-  - [ ] List Wishlist
-  - [ ] Fitur Remove Wishlist
+-   [ ] Halaman Register
+-   [ ] Halaman Login
+-   [ ] Halaman Home
+    -   [ ] Banner Promo
+    -   [ ] Detail info Ecommerce
+    -   [ ] Featured Product (5-10 product) + “see-all”
+-   [ ] Halaman Product
+-   [ ] List Product
+    -   [ ] Fitur Search
+    -   [ ] Fitur Pagination (menggunakan infinite scroll)
+    -   [ ] Fitur Add to wishlist
+-   [ ] Halaman Detail Product
+    -   [ ] Fitur Add to wishlist
+    -   [ ] Implementasi Meta Tag di Head sesuai detail product
+-   [ ] Halaman Wishlist Product
+    -   [ ] List Wishlist
+    -   [ ] Fitur Remove Wishlist
 
 ### Fitur
 
-- [ ] Fitur register
-- [ ] Fitur login
-- [ ] Fitur show list product
-- [ ] Fitur show detail product
-- [ ] Fitur add to wishlist
-- [ ] Fitur remove wishlist
-- [ ] Fitur search product berdasarkan nama (implement menerapkan debounce)
-- [ ] Fitur pagination (implement infinite scroll)
+-   [ ] Fitur register
+-   [ ] Fitur login
+-   [ ] Fitur show list product
+-   [ ] Fitur show detail product
+-   [ ] Fitur add to wishlist
+-   [ ] Fitur remove wishlist
+-   [ ] Fitur search product berdasarkan nama (implement menerapkan debounce)
+-   [ ] Fitur pagination (implement infinite scroll)

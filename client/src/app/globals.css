@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: var(--primary-bg);
+  background-color: rgb(255, 252, 252);
 }
 
 #heading {
@@ -88,7 +88,7 @@ body {
   border: 2px solid var(--primary-text);
 }
 
-#input-submit {
+#input-submit, #input-buy {
   box-shadow: 1px 1px 4px 0px var(--primary);
   background-color: var(--primary-bg);
   color: var(--primary-text);
@@ -97,7 +97,13 @@ body {
   border-radius: 10px;
 }
 
-#input-submit:hover {
+#input-buy {
+  font-size: 14px;
+  padding: 5px 14px;
+  width: 100%;
+}
+
+#input-submit:hover, #input-buy:hover {
   background-color: var(--primary-text);
   color: var(--primary-bg);
 }
