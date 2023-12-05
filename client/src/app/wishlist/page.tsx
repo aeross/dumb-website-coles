@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../components/Nav'
 import Card from '../components/CardProduct'
+import Footer from '../components/Footer'
 
 function Wishlist() {
   // assume logic for fetching and filtering/pagination is already applied
@@ -105,6 +106,7 @@ function Wishlist() {
             return <Card key={d.slug} wishlist={true} product={d} />
         }) }
     </div>
+    <Footer />
   </>)
 }
 

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Matt Murdock",
+        "username": "daredevil",
+        "email": "matt@mail.com",
+        "password": "12345"
+    },
+    {
+        "name": "Bruce Wayne",
+        "username": "batman",
+        "email": "bruce@mail.com",
+        "password": "12345"
+    }
+]

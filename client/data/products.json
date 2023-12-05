@@ -1,0 +1,223 @@
+[
+    {
+    "name": "Peas - Frozen",
+    "slug": "peas",
+    "description": "Durable and long-lasting",
+    "excerpt": "Elevate your everyday routine with this high-quality product.",
+    "price": 98,
+    "tags": [ "fruit", "food", "healthy" ],
+    "thumbnail": "https://www.mjandhungryman.com/wp-content/uploads/2022/12/How-to-cook-frozen-peas.jpg",
+    "images": [ "https://www.mjandhungryman.com/wp-content/uploads/2022/12/How-to-cook-frozen-peas.jpg" ],
+    "createdAt": { "$date": "2023-10-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-10-30T10:15:38.226Z" }
+  }, {
+    "name": "Pastry - Carrot Muffin - Mini",
+    "slug": "pastry",
+    "description": "Easy to use and maintain",
+    "excerpt": "Unleash your creativity with this innovative product.",
+    "price": 661,
+    "tags": [ "food" ],
+    "thumbnail": "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/12045659/Perlu-Tahu-Ini-Jenis-Pastry-dan-Bedanya-dengan-Bakery.jpg.webp",
+    "images": [ "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/12045659/Perlu-Tahu-Ini-Jenis-Pastry-dan-Bedanya-dengan-Bakery.jpg.webp" ],
+    "createdAt": { "$date": "2023-11-30T10:14:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:14:38.226Z" }
+  }, {
+    "name": "Cheese - Oka",
+    "slug": "cheese",
+    "description": "Durable and long-lasting",
+    "excerpt": "Discover the perfect blend of style and functionality.",
+    "price": 793,
+    "tags": [ "food", "dairy" ],
+    "thumbnail": "https://asset-2.tstatic.net/tribunnews/foto/bank/images/ilustrasi-cheddar-cheese.jpg",
+    "images": [ "https://asset-2.tstatic.net/tribunnews/foto/bank/images/ilustrasi-cheddar-cheese.jpg" ],
+    "createdAt": { "$date": "2023-11-30T10:15:35.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:35.226Z" }
+  }, {
+    "name": "Lettuce - Belgian Endive",
+    "slug": "b+-q+",
+    "description": "Affordable price",
+    "excerpt": "Elevate your everyday routine with this high-quality product.",
+    "price": 848,
+    "tags": [ "apple" ],
+    "thumbnail": "https://example.com/thumbnails/z0efFO426A.jpg",
+    "images": [ "http://L+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:36.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:36.226Z" }
+  }, {
+    "name": "Beer - Upper Canada Light",
+    "slug": "d+-m+",
+    "description": "Affordable price",
+    "excerpt": "Experience luxury at its finest.",
+    "price": 270,
+    "tags": [ "grape" ],
+    "thumbnail": "https://example.com/thumbnails/7XRR63KqBr.jpg",
+    "images": [ "https://Q+" ],
+    "createdAt": { "$date": "2023-11-28T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-28T10:15:38.226Z" }
+  }, {
+    "name": "Flavouring - Raspberry",
+    "slug": "u+-b+",
+    "description": "High-quality product",
+    "excerpt": "Experience luxury at its finest.",
+    "price": 988,
+    "tags": [ "grape" ],
+    "thumbnail": "https://example.com/thumbnails/po5hOXLqLl.jpg",
+    "images": [ "https://.+" ],
+    "createdAt": { "$date": "2023-11-28T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-28T10:15:38.226Z" }
+  }, {
+    "name": "Longos - Chicken Caeser Salad",
+    "slug": "m+-y+",
+    "description": "High-quality product",
+    "excerpt": "Experience luxury at its finest.",
+    "price": 401,
+    "tags": [ "orange" ],
+    "thumbnail": "https://example.com/thumbnails/GSoX6w0A2m.jpg",
+    "images": [ "http:///+" ],
+    "createdAt": { "$date": "2023-11-28T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-28T10:15:38.226Z" }
+  }, {
+    "name": "Soup - Campbells Broccoli",
+    "slug": "h+-x+",
+    "description": "Durable and long-lasting",
+    "excerpt": "Elevate your everyday routine with this high-quality product.",
+    "price": 781,
+    "tags": [ "grape" ],
+    "thumbnail": "https://example.com/thumbnails/v13bACs10z.jpg",
+    "images": [ "https://j+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:38.226Z" }
+  }, {
+    "name": "Sprouts - Bean",
+    "slug": "w+-b+",
+    "description": "Durable and long-lasting",
+    "excerpt": "Discover the perfect blend of style and functionality.",
+    "price": 453,
+    "tags": [ "orange", "grape" ],
+    "thumbnail": "https://example.com/thumbnails/Smw37U7s6Y.jpg",
+    "images": [ "https:///+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:38.226Z" }
+  }, {
+    "name": "Cheese - Perron Cheddar",
+    "slug": "l+-d+",
+    "description": "Versatile and stylish",
+    "excerpt": "Unleash your creativity with this innovative product.",
+    "price": 710,
+    "tags": [ "banana" ],
+    "thumbnail": "https://example.com/thumbnails/ctF17sJbuP.jpg",
+    "images": [ "https://W+" ],
+    "createdAt": { "$date": "2023-11-20T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-20T10:15:38.226Z" }
+  }, {
+    "name": "Juice - Prune",
+    "slug": "r+-h+",
+    "description": "Versatile and stylish",
+    "excerpt": "Transform your space with this elegant and timeless design.",
+    "price": 585,
+    "tags": [ "orange", "grape" ],
+    "thumbnail": "https://example.com/thumbnails/93bjSz3tH5.jpg",
+    "images": [ "http:///+" ],
+    "createdAt": { "$date": "2023-11-20T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-20T10:15:38.226Z" }
+  }, {
+    "name": "Cookie Trail Mix",
+    "slug": "m+-j+",
+    "description": "Durable and long-lasting",
+    "excerpt": "Experience luxury at its finest.",
+    "price": 187,
+    "tags": [ "orange" ],
+    "thumbnail": "https://example.com/thumbnails/M7BrY799Va.jpg",
+    "images": [ "http://6+" ],
+    "createdAt": { "$date": "2023-10-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-10-30T10:15:38.226Z" }
+  }, {
+    "name": "Beef - Bresaola",
+    "slug": "k+-t+",
+    "description": "Easy to use and maintain",
+    "excerpt": "Transform your space with this elegant and timeless design.",
+    "price": 907,
+    "tags": [ "melon" ],
+    "thumbnail": "https://example.com/thumbnails/6Mvy839s9x.jpg",
+    "images": [ "http://J+" ],
+    "createdAt": { "$date": "2023-10-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-10-30T10:15:38.226Z" }
+  }, {
+    "name": "Tea - Herbal Orange Spice",
+    "slug": "p+-m+",
+    "description": "High-quality product",
+    "excerpt": "Discover the perfect blend of style and functionality.",
+    "price": 560,
+    "tags": [ "banana", "orange", "grape" ],
+    "thumbnail": "https://example.com/thumbnails/YN0K23CjUT.jpg",
+    "images": [ "https://3+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:38.226Z" }
+  }, {
+    "name": "Lentils - Green, Dry",
+    "slug": "v+-k+",
+    "description": "Versatile and stylish",
+    "excerpt": "Transform your space with this elegant and timeless design.",
+    "price": 844,
+    "tags": [ "grape" ],
+    "thumbnail": "https://example.com/thumbnails/Xq650m2941.jpg",
+    "images": "[ https://x+",
+    "createdAt": { "$date": "2023-11-30T10:12:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:12:38.226Z" }
+  }, {
+    "name": "Nescafe - Frothy French Vanilla",
+    "slug": "n+-h+",
+    "description": "Affordable price",
+    "excerpt": "Discover the perfect blend of style and functionality.",
+    "price": 398,
+    "tags": [ "banana", "orange" ],
+    "thumbnail": "https://example.com/thumbnails/1HD7gW348T.jpg",
+    "images": [ "http://j+" ],
+    "createdAt": { "$date": "2023-11-30T10:12:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:12:38.226Z" }
+  }, {
+    "name": "Lychee - Canned",
+    "slug": "w+-r+",
+    "description": "Durable and long-lasting",
+    "excerpt": "Discover the perfect blend of style and functionality.",
+    "price": 311,
+    "tags": [ "banana", "orange" ],
+    "thumbnail": "https://example.com/thumbnails/1r7ydT4L3W.jpg",
+    "images": [ "http://-+" ],
+    "createdAt": { "$date": "2023-11-30T10:11:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:11:38.226Z" }
+  }, {
+    "name": "Pork - Inside",
+    "slug": "y+-m+",
+    "description": "Affordable price",
+    "excerpt": "Unleash your creativity with this innovative product.",
+    "price": 666,
+    "tags": [ "grape", "orange" ],
+    "thumbnail": "https://example.com/thumbnails/10za3VZu2K.jpg",
+    "images": [ "http://_+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:38.226Z" }
+  }, {
+    "name": "Stainless Steel Cleaner Vision",
+    "slug": "m+-y+",
+    "description": "Affordable price",
+    "excerpt": "Unleash your creativity with this innovative product.",
+    "price": 302,
+    "tags": [ "grape" ],
+    "thumbnail": "https://example.com/thumbnails/gJp1UKlGd8.jpg",
+    "images": [ "https://t+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:38.226Z" }
+  }, {
+    "name": "Red Pepper Paste",
+    "slug": "n+-e+",
+    "description": "Durable and long-lasting",
+    "excerpt": "Unleash your creativity with this innovative product.",
+    "price": 185,
+    "tags": [ "melon", "banana" ],
+    "thumbnail": "https://example.com/thumbnails/oE6rW5ST7x.jpg",
+    "images": [ "https://_+" ],
+    "createdAt": { "$date": "2023-11-30T10:15:38.226Z" },
+    "updatedAt": { "$date": "2023-11-30T10:15:38.226Z" }
+  }
+]

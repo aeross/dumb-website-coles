@@ -7,6 +7,7 @@
   --primary-bg: rgb(255, 228, 232);
   --primary: lightpink;
   --primary-text: rgb(150, 3, 3);
+  --primary-text-bright: rgb(220, 55, 55);
   --secondary-bg: rgb(250, 240, 240);
   --secondary: rgb(225, 215, 215);
 }
@@ -99,21 +100,28 @@ body {
 }
 
 #input-submit, #input-buy {
-  box-shadow: 1px 1px 4px 0px var(--primary);
-  background-color: var(--primary-bg);
-  color: var(--primary-text);
+  border: 1px solid grey;
+  background-color: rgb(252, 252, 252);
   font-weight: bold;
   padding: 8px 18px;
-  border-radius: 10px;
+  border-radius: 14px;
+}
+
+.card-component:hover #input-submit, .card-component:hover #input-buy {
+  border: 0;
+  box-shadow: 1px 1px 4px 0px var(--primary);
+  background-color: var(--primary-text-bright);
+  color: var(--primary-bg);
 }
 
 #input-buy {
   font-size: 14px;
   padding: 5px 14px;
-  width: 100%;
+  width: 75%;
 }
 
-#input-submit:hover, #input-buy:hover {
+#input-submit:hover, #input-buy:hover, .card-component:hover #input-submit:hover, .card-component:hover #input-buy:hover {
+  border: 0;
   background-color: var(--primary-text);
   color: var(--primary-bg);
 }
@@ -139,5 +147,5 @@ body {
 #footer-text p:hover {
   cursor: pointer;
   text-decoration: none;
-  color: var(--primary-text);
+  color: var(--primary-text-bright);
 }
