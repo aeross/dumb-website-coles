@@ -3,7 +3,7 @@ import React from 'react'
 
 function Nav() {
     return (
-<div className="w-full h-[64px] bg-slate-50 flex justify-between items-center sticky top-0 z-50 shadow-md p-4">
+<div className="w-full h-[74px] bg-slate-50 flex justify-between items-center sticky top-0 z-50 shadow-sm shadow-slate-300 py-4 px-12">
     {/* nav start */}
     <Link href="/">
         <img

@@ -13,6 +13,7 @@
 
 body {
   background-color: rgb(255, 252, 252);
+  /* background-color: rgb(187, 182, 204); */
 }
 
 #heading {
@@ -20,6 +21,15 @@ body {
   font-size: 28px;
   font-weight: bold;
   padding: 10px;
+}
+
+.heading-sm {
+  font-weight: bold;
+  font-size: 1.5rem /* 20px */;
+  line-height: 2rem /* 28px */;
+  margin: 1rem /* 16px */;
+  margin-top: 2rem /* 48px */;
+  margin-left: 3rem /* 48px */;
 }
 
 /* -------------------------------------------------------- */
@@ -106,4 +116,28 @@ body {
 #input-submit:hover, #input-buy:hover {
   background-color: var(--primary-text);
   color: var(--primary-bg);
+}
+
+
+/* footer */
+#footer-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer-text h4 {
+  font-weight: bold;
+  padding-bottom: 6px;
+}
+
+#footer-text p {
+  padding: 4px 0;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+#footer-text p:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary-text);
 }

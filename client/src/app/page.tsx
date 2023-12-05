@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Cards from './components/CardsProduct'
 import Banner from './components/Banner'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 export default function Home() {
   // assume logic for fetching and filtering/pagination is already applied
@@ -101,7 +102,8 @@ export default function Home() {
   return (<>
     <Nav />
     <Banner />
-    <h1 className="text-bold text-xl m-4 ml-12">Featured</h1>
+    <h1 className="heading-sm">Featured</h1>
     <Cards />
+    <Footer />
   </>)
 }

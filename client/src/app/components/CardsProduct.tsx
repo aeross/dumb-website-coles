@@ -99,7 +99,7 @@ function Cards() {
     return (<>
 <div className="grid grid-cols-5 gap-5 py-4 px-12">
     { data.map(d => {
-        return <Card key={d.slug} product={d} />
+        return <Card key={d.slug} wishlist={false} product={d} />
     }) }
 </div>
     </>)
