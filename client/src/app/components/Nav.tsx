@@ -4,6 +4,8 @@ import { FaUser } from "react-icons/fa";
 import { FaClipboardList } from "react-icons/fa";
 import { IoLogIn } from "react-icons/io5";
 import { GiArchiveRegister } from "react-icons/gi";
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 function Nav({ authenticated }: { authenticated: boolean }) {
     return (
@@ -19,7 +21,6 @@ function Nav({ authenticated }: { authenticated: boolean }) {
 
 
     {/* nav end */}
-    
     <div className="flex flex-row justify-end gap-1">
     { authenticated 
     ?
@@ -28,13 +29,18 @@ function Nav({ authenticated }: { authenticated: boolean }) {
                 <FaClipboardList className="text-3xl p-1" />
                 Wishlists
             </Link>
-            <span 
-                className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center"
-                // onClick={}
-            >
-                <FaUser className="text-3xl p-1" />
-                Log Out
-            </span>
+            <form action={ async () => {
+                "use server"
+                cookies().get("token") && cookies().delete("token");
+                redirect("/login");
+            } }>
+                <button 
+                    className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center"
+                >
+                    <FaUser className="text-3xl p-1" />
+                    Log Out
+                </button>
+            </form>
         </>) 
     :
         (<>
