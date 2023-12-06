@@ -4,6 +4,12 @@ import { NextResponse } from "next/server";
 import { APIResponse } from "../responseTypeDef";
 
 // POST create new wishlist
+export const GET = async (request: Request) => {
+    return NextResponse.json<APIResponse<unknown>>({
+        status: 200
+    })
+}
+
 export const POST = async (request: Request) => {
     // extract data sent by client
     const data = await request.json();

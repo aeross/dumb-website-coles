@@ -18,11 +18,6 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
         throw new Error(responseJson.error);
     }
     const data = responseJson.data;
-
-    // add to wishlist
-    function addToWishlist() {
-        
-    }
     
     return (<>
     <Nav authenticated={true} />

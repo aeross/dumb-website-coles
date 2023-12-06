@@ -1,4 +1,4 @@
-import User from "@/db/models/user";
+import User, { UserModelCreateInput } from "@/db/models/user";
 import { NextResponse } from "next/server";
 import { UserModel } from "@/db/models/user";
 import { APIResponse } from "../responseTypeDef";
@@ -18,7 +18,7 @@ export const GET = async () => {
 // POST /api/users  <-- for register
 export async function POST(request: Request) {
     try {
-        const data = await request.json();
+        const data: UserModelCreateInput = await request.json();
         const newUser = await User.register(data);
         return NextResponse.json<APIResponse<unknown>>({
             status: 201,

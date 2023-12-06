@@ -1,7 +1,8 @@
 import { ObjectId } from "mongodb";
 import { getDb } from "../config";
 import BcryptHelper from "../../helpers/bcrypt";  // for password hashing
-import { ZodError, z } from "zod";  // for input validation
+import { z } from "zod";  // for input validation
+import JWTHelper from "@/helpers/jwt";
 
 const COLLECTION_USER = "Users";
 
@@ -16,6 +17,12 @@ export type UserModel = {
 
 // defines the type for UserModelCreateInput (without _id)
 export type UserModelCreateInput = Omit<UserModel, "_id">;
+
+// defines the type for login input (email and password)
+export type UserModelLoginInput = {
+    email: string;
+    password: string;
+}
 
 // defines input validation
 const userInputSchema = z.object({
@@ -38,6 +45,31 @@ export default class User {
             .toArray()) as UserModel[];
         
         return users;
+    }
+
+    static async login(input: UserModelLoginInput): Promise<string> {
+        try {
+            const db = await getDb();
+
+            // find user by email
+            const user = await db.collection(COLLECTION_USER).findOne({ email: input.email }) as UserModel;
+            if (!user) throw "Invalid credentials";
+
+            // compare password with found user's hashed password
+            const isValidPassword = BcryptHelper.compare(input.password, user.password);
+            if (!isValidPassword) throw "Invalid credentials";
+
+            const payload = {
+                id: user._id,
+                name: user.name,
+                username: user.username,
+                email: user.email
+            }
+            const token = JWTHelper.encode(payload);
+            return token;
+        } catch (error) {
+            throw error;
+        }
     }
 
     static async register(input: UserModelCreateInput): Promise<UserModel> {

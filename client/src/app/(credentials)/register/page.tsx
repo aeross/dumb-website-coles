@@ -1,13 +1,14 @@
+/* THIS IS CLIENT-SIDE RENDERING */
 "use client"
 import React, { useState } from 'react'
-import Nav from '../components/Nav';
-import { APIResponse } from '../api/responseTypeDef';
+import Nav from '../../components/Nav';
+import { APIResponse } from '../../api/responseTypeDef';
 import { UserModel } from '@/db/models/user';
 import { useRouter } from 'next/navigation';
 
 function Register() {
     const [error, setError] = useState("");
-    const router = useRouter();
+    // const router = useRouter();
 
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
@@ -17,13 +18,14 @@ function Register() {
         e.preventDefault();
         const response: Response = await fetch("http://localhost:3000/api/users", {
             method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, username, email, password })
         })
         const responseJson: APIResponse<UserModel> = await response.json();
 
         // handle response
-        if (responseJson.error) {
-            setError(responseJson.error);
+        if (!response.ok) {
+            responseJson.error ? setError(responseJson.error) : setError("An error has occurred");
         } else {
             // automatically logs in the user
             // ...

@@ -28,7 +28,10 @@ function Nav({ authenticated }: { authenticated: boolean }) {
                 <FaClipboardList className="text-3xl p-1" />
                 Wishlists
             </Link>
-            <span className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+            <span 
+                className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center"
+                // onClick={}
+            >
                 <FaUser className="text-3xl p-1" />
                 Log Out
             </span>
