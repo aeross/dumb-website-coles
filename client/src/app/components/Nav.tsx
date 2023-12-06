@@ -35,11 +35,11 @@ function Nav({ authenticated }: { authenticated: boolean }) {
         </>) 
     :
         (<>
-            <Link href="/wishlist" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+            <Link href="/login" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
                 <IoLogIn className="text-3xl p-1" />
                 Log In
             </Link>
-            <Link href="/wishlist" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+            <Link href="/register" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
                 <GiArchiveRegister className="text-3xl p-1" />
                 Sign Up
             </Link>

@@ -1,15 +1,34 @@
 "use client"
 import React, { useState } from 'react'
 import Nav from '../components/Nav';
+import { APIResponse } from '../api/responseTypeDef';
+import { UserModel } from '@/db/models/user';
+import { useRouter } from 'next/navigation';
 
 function Register() {
+    const [error, setError] = useState("");
+    const router = useRouter();
+
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    function handleSubmit(e: React.FormEvent) {
+    async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        console.log(name, username, email, password)
+        const response: Response = await fetch("http://localhost:3000/api/users", {
+            method: "POST",
+            body: JSON.stringify({ name, username, email, password })
+        })
+        const responseJson: APIResponse<UserModel> = await response.json();
+
+        // handle response
+        if (responseJson.error) {
+            setError(responseJson.error);
+        } else {
+            // automatically logs in the user
+            // ...
+            // router.push("/");
+        }
     }
 
     return (<>
@@ -17,6 +36,7 @@ function Register() {
 <div className="h-full mt-16 flex justify-center items-center">
     <div id="form-bg">
         <h1 id="heading">Register</h1>
+        <p className="text-xs text-bold text-red-800">{error}</p>
         <form id="form">
             <div id="form-input">
                 <label htmlFor="name">Name</label>
