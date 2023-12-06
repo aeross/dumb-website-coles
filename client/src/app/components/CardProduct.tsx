@@ -1,3 +1,4 @@
+import { ProductModel } from '@/db/models/product'
 import { toDollarFormat } from '@/helpers/toDollarFormat'
 import Link from 'next/link'
 import React from 'react'
@@ -5,7 +6,7 @@ import React from 'react'
 // a card for Products data
 function Card(
     { product, wishlist }: 
-    { product: Product, wishlist: boolean }
+    { product: ProductModel, wishlist: boolean }
 ) {
     return (<>
 <div>

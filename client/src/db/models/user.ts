@@ -1,7 +1,8 @@
 import { ObjectId } from "mongodb";
 import { getDb } from "../config";
-// import { hashText } from "../utils/hash";
 import BcryptHelper from "../../helpers/bcrypt";
+
+const COLLECTION_USER = "Users";
 
 // defines the type for UserModel (complete)
 export type UserModel = {
@@ -15,7 +16,6 @@ export type UserModel = {
 // defines the type for UserModelCreateInput (without _id)
 // export type UserModelCreateInput = Omit<UserModel, "_id">;
 
-const COLLECTION_USER = "Users";
 
 // Model User -- CRUD
 export default class User {

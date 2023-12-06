@@ -2,14 +2,6 @@ import Product, { ProductModel } from "@/db/models/product";
 import User from "@/db/models/user";
 import { NextResponse } from "next/server";
 
-// type def for API response
-type APIResponse<T> = {
-    status: number;
-    message?: string;
-    data?: T;
-    error?: string;
-};
-
 // GET /api/users
 export const GET = async () => {
     const data = await Product.getProducts();

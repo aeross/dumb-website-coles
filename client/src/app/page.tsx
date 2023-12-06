@@ -100,7 +100,7 @@ export default function Home() {
   ]
 
   return (<>
-    <Nav />
+    <Nav authenticated={true} />
     <Banner />
     <h1 className="heading-sm">Featured</h1>
     <Cards />

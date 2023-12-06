@@ -1,6 +1,8 @@
 import { ObjectId } from "mongodb";
 import { getDb } from "../config";
 
+const COLLECTION_PRODUCT = "Products";
+
 export type ProductModel = {
     _id: ObjectId,
     name: string,
@@ -15,22 +17,20 @@ export type ProductModel = {
     updatedAt?: Date | string
 }
 
-const COLLECTION_PRODUCTS = "Products";
-
 export default class Product {
     static async getProducts() {
         const db = await getDb();
 
-        const products = await (db.collection(COLLECTION_PRODUCTS).find({}).toArray());
+        const products = (await db.collection(COLLECTION_PRODUCT).find({}).toArray()) as ProductModel[];
         return products;
     }
 
     static async getProductBySlug(slug: string) {
         const db = await getDb();
 
-        const product = await (db
-            .collection(COLLECTION_PRODUCTS)
-            .findOne({ slug }));
+        const product = (await db
+            .collection(COLLECTION_PRODUCT)
+            .findOne({ slug })) as ProductModel;
         return product;
     }
 }

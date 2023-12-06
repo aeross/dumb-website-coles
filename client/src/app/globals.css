@@ -10,10 +10,12 @@
   --primary-text-bright: rgb(220, 55, 55);
   --secondary-bg: rgb(250, 240, 240);
   --secondary: rgb(225, 215, 215);
+  --secondary-bright: rgb(249, 245, 245);
 }
 
 body {
   background-color: rgb(255, 252, 252);
+  min-height: 100dvh;
   /* background-color: rgb(187, 182, 204); */
 }
 
@@ -37,10 +39,10 @@ body {
 /* FORMS */
 /* -------------------------------------------------------- */
 #form-bg {
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bright);
   border-radius: 20px;
-  border: 2px solid var(--primary);
-  box-shadow: 2px 2px 8px 0px var(--primary);
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 3px 0px grey;
 
   width: 45%;
   margin: auto;
@@ -88,7 +90,8 @@ body {
 
 .input-text {
   background-color: var(--secondary);
-  border: 2px solid var(--primary);
+  border: 1px solid lightgrey;
+  box-shadow: 1px 1px 3px 0px grey;
   box-sizing: border-box;
   outline: none;
   border-radius: 10px;
@@ -96,7 +99,8 @@ body {
 }
 
 .input-text:focus {
-  border: 2px solid var(--primary-text);
+  border: 1px solid var(--primary-text);
+  box-shadow: 1px 1px 5px 0px var(--primary);
 }
 
 #input-submit, #input-buy {

@@ -1,13 +1,6 @@
 import Product from "@/db/models/product";
 import { NextRequest, NextResponse } from "next/server";
-
-// type def for API response
-type APIResponse<T> = {
-    status: number;
-    message?: string;
-    data?: T;
-    error?: string;
-};
+import { APIResponse } from "../../responseTypeDef";
 
 export const GET = async (
     _request: NextRequest,
@@ -16,6 +9,12 @@ export const GET = async (
     const slug = params.slug;
 
     const product = await Product.getProductBySlug(slug);
+    if (!product) {
+        return NextResponse.json<APIResponse<unknown>>({
+            status: 404,
+            error: "Data not found"
+        })
+    }
 
     return NextResponse.json<APIResponse<unknown>>({
         status: 200,

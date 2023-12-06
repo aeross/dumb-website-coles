@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react'
+import Nav from '../components/Nav';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -10,7 +11,8 @@ function Login() {
     }
 
     return (<>
-<div className="h-[100dvh] flex justify-center items-center">
+<Nav authenticated={false} />
+<div className="h-full mt-16 flex justify-center items-center">
     <div id="form-bg">
         <h1 id="heading">Login</h1>
         <form id="form">
