@@ -14,13 +14,18 @@ export async function middleware(request: NextRequest) {
 
         if (!tokenVal) {
             if (request.url.includes("/api/users") && request.method == "POST") {
-                // this part is only for register (POST /api/users)
+                // this part is for register (POST /api/users)
                 return NextResponse.next();
             }
             if (request.url.includes("/api/users") && request.method == "GET") {
-                // this part is only to get user's logged in info (POST /api/users)
+                // this part is to get user's logged in info (GET /api/users)
                 return NextResponse.next();
             }
+            if (request.url.includes("/api/products") && request.method == "GET") {
+                // GET /api/products does not require authentication
+                return NextResponse.next();
+            }
+            
             return NextResponse.json<APIResponse<unknown>>(
                 { status: 401, error: "You must log in first" }, 
                 { status: 401 }

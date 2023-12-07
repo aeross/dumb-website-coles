@@ -1,10 +1,10 @@
-import Footer from '@/app/components/Footer';
-import Nav from '../../components/Nav';
+import Footer from '@/app/(components)/Footer';
+import Nav from '../../(components)/Nav';
 import React from 'react'
 import { APIResponse } from '@/app/api/responseTypeDef';
 import { ProductModel } from '@/db/models/product';
 import { toDollarFormat } from '@/helpers/toDollarFormat';
-import AddToWishlist from '@/app/components/AddToWishlist';
+import AddToWishlist from '@/app/(components)/AddToWishlist';
 
 
 async function ProductDetail({ params }: { params: { slug: string } }) {
@@ -20,7 +20,6 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
     const data = responseJson.data;
     
     return (<>
-    <Nav authenticated={true} />
 
     { data && (
         <div className="my-12 mx-24">

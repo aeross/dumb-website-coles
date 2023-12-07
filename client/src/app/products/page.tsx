@@ -1,9 +1,9 @@
 import React from 'react'
-import Nav from '../components/Nav'
-import Search from '../components/Search'
-import Card from '../components/CardProduct'
-import Pagination from '../components/Pagination'
-import Footer from '../components/Footer'
+import Nav from '../(components)/Nav'
+import Search from '../(components)/Search'
+import Card from '../(components)/CardProduct'
+import Pagination from '../(components)/Pagination'
+import Footer from '../(components)/Footer'
 import { ProductModel } from '@/db/models/product'
 
 import { revalidatePath } from "next/cache";
@@ -21,7 +21,6 @@ async function Products() {
     revalidatePath("/products");
 
     return (<>
-        <Nav authenticated={true} />
         <div className="flex justify-center pt-4"><Search /></div>
 
         { data && (
@@ -32,7 +31,6 @@ async function Products() {
             </div>
         ) }
         
-
         <Pagination />
     </>)
 }

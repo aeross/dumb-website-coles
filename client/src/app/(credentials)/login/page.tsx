@@ -1,15 +1,14 @@
 /* THIS IS SERVER-SIDE RENDERING */
 // "use client"
 import React, { useState } from 'react'
-import Nav from '../../components/Nav';
-import ClientFlash from '@/app/components/ClientFlash';
+import Nav from '../../(components)/Nav';
+import ClientFlash from '@/app/(components)/ClientFlash';
 // import { APIResponse } from '@/app/api/responseTypeDef';
 import { doLogin } from './action';
 
 function Login() {
 
     return (<>
-<Nav authenticated={false} />
 <div className="h-full mt-16 flex justify-center items-center">
     <div id="form-bg">
         <h1 id="heading">Login</h1>

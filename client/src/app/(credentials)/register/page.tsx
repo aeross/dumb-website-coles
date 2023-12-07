@@ -1,7 +1,7 @@
 /* THIS IS CLIENT-SIDE RENDERING */
 "use client"
 import React, { useState } from 'react'
-import Nav from '../../components/Nav';
+import Nav from '../../(components)/Nav';
 import { APIResponse } from '../../api/responseTypeDef';
 import { UserModel } from '@/db/models/user';
 import { useRouter } from 'next/navigation';
@@ -34,7 +34,6 @@ function Register() {
     }
 
     return (<>
-<Nav authenticated={false} />
 <div className="h-full mt-16 flex justify-center items-center">
     <div id="form-bg">
         <h1 id="heading">Register</h1>

@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation';
 import { isAuthd } from '@/helpers/auth';
 import { UserModel } from '@/db/models/user';
 
-async function Nav({ authenticated }: { authenticated: boolean }) {
+async function Nav() {
 
     const res: Response = await fetch("http://localhost:3000/api/users", {
         headers: { Cookie: cookies().toString() }
@@ -17,8 +17,6 @@ async function Nav({ authenticated }: { authenticated: boolean }) {
     const auth = res.status === 200 ? true : false
 
     const resJson: UserModel | undefined = auth ? (await res.json()).data : undefined;
-    // console.log(resJson);
-
 
     return (
 <div className="w-full h-[76px] bg-slate-50 flex justify-between items-center sticky top-0 z-50 shadow-sm shadow-slate-300 py-4 px-12">
