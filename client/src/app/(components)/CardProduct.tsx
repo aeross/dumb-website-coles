@@ -2,6 +2,7 @@ import { ProductModel } from '@/db/models/product'
 import { toDollarFormat } from '@/helpers/toDollarFormat'
 import Link from 'next/link'
 import React from 'react'
+import RemoveFromWishlist from './RemoveFromWishlist'
 
 // a card for Products data
 function Card(
@@ -22,8 +23,8 @@ function Card(
                 <p className="text-md text-sm">{product.price ? toDollarFormat(product.price) : "price unavailable"}</p>
             </div>
         </div>
-        { !wishlist && <Link href={`/products/${product.slug}`} className="m-2"><button id="input-buy">buy now</button></Link> }
-        { wishlist && <Link href="/" className="m-2"><button id="input-buy">remove</button></Link> }
+        { !wishlist && <Link href={`/products/${product.slug}`} className="m-2 flex-grow-0"><button id="input-buy">More</button></Link> }
+        { wishlist && <Link href="/" className="m-2 flex-grow-0"><RemoveFromWishlist /></Link> }
     </div>
 </div>
     </>)

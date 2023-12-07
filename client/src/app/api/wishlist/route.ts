@@ -19,8 +19,6 @@ export const GET = async (request: Request) => {
         return listedProd;
     });
 
-    console.log(products);
-
     return NextResponse.json<APIResponse<unknown>>({
         status: 200,
         data: products

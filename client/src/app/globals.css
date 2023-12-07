@@ -123,7 +123,7 @@ body {
 #input-buy {
   font-size: 14px;
   padding: 5px 14px;
-  width: 75%;
+  /* width: 42%; */
 }
 
 #input-submit:hover, #input-buy:hover, .card-component:hover #input-submit:hover, .card-component:hover #input-buy:hover {

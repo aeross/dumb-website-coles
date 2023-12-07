@@ -1,15 +1,19 @@
-import Image from 'next/image'
 import Cards from './(components)/CardsProduct'
 import Banner from './(components)/Banner'
-import Nav from './(components)/Nav'
-import Footer from './(components)/Footer'
+import { cookies } from 'next/headers'
+import { ProductModel } from "@/db/models/product"
+import { APIResponse } from './api/responseTypeDef'
 
-export default function Home() {
-  
+export default async function Home() {
+  const response: Response = await fetch("http://localhost:3000/api/products", {
+      headers: { Cookie: cookies().toString() }
+  });
+  const responseJson: APIResponse<ProductModel[]> = await response.json();
+  const data = responseJson.data;
 
   return (<>
     <Banner />
     <h1 className="heading-sm">Featured</h1>
-    <Cards />
+    { data && <Cards data={data} /> }
   </>)
 }

@@ -13,7 +13,6 @@ async function Wishlist() {
     });
     const resJson: APIResponse<ProductModel[]> = await res.json();
     const products = resJson.data;
-    // console.log(products);
     let data = true;
     if (!products || products.length <= 0) {
         data = false;
