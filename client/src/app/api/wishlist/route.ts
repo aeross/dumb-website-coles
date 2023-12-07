@@ -31,12 +31,17 @@ export const POST = async (request: Request) => {
     const { productId } = await request.json();
     const userId = request.headers.get("x-user-id");
 
+    // ensure userId is valid
     if (!userId) {
         return NextResponse.json<APIResponse<unknown>>(
             { status: 401, error: "You must log in first" }, 
             { status: 401 }
         );
     }
+
+    // ensure productId is valid
+    // TODO: ...
+
     const data = await Wishlist.addWishlist(userId, productId);
 
     return NextResponse.json<APIResponse<unknown>>({
@@ -44,4 +49,26 @@ export const POST = async (request: Request) => {
         message: "Hello from POST /api/wishlist!",
         data
     })
+}
+
+export const DELETE = async (request: Request) => {
+    const { productId } = await request.json();
+    const userId = request.headers.get("x-user-id");
+
+    // ensure userId is valid
+    if (!userId) {
+        return NextResponse.json<APIResponse<unknown>>(
+            { status: 401, error: "You must log in first" }, 
+            { status: 401 }
+        );
+    }
+
+    // ensure productId is valid
+    // TODO: ...
+
+    const deleted = await Wishlist.deleteWishlist(userId, productId);
+    return NextResponse.json<APIResponse<unknown>>(
+        { status: 200, data: deleted },
+        { status: 200 }
+    )
 }

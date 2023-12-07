@@ -1,13 +1,23 @@
 "use client"
+import { ObjectId } from 'mongodb';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
-function RemoveFromWishlist() {
-    function removeFromWishlist() {
-        
+function RemoveFromWishlist({ productId }: { productId: ObjectId | string }) {
+    const router = useRouter();
+
+    async function removeFromWishlist() {
+        const res = await fetch("http://localhost:3000/api/wishlist", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ productId })
+        });
+
+        if (res.ok) router.refresh();
     }
 
     return (
-        <button id="input-buy" className="w-40 mb-2" onClick={removeFromWishlist}>Remove</button>
+        <button id="input-buy" onClick={removeFromWishlist}>Remove</button>
     )
 }
 

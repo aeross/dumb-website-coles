@@ -1,5 +1,3 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 import { APIResponse } from "./app/api/responseTypeDef";
 import JWTHelper from "./helpers/jwt";

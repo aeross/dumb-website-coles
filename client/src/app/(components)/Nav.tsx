@@ -6,7 +6,6 @@ import { IoLogIn } from "react-icons/io5";
 import { GiArchiveRegister } from "react-icons/gi";
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { isAuthd } from '@/helpers/auth';
 import { UserModel } from '@/db/models/user';
 
 async function Nav() {
@@ -30,7 +29,9 @@ async function Nav() {
     </Link>
 
     <div>
-        { auth && <p>Welcome back, <span className="text-bold">{resJson?.name}</span></p> }
+        { auth && (
+            <p>Welcome back, <span className="text-bold">{resJson?.name ? resJson.name : "unknown"}</span></p>
+        ) }
     </div>
 
     {/* nav end */}

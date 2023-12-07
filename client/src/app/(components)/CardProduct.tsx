@@ -24,7 +24,9 @@ function Card(
             </div>
         </div>
         { !wishlist && <Link href={`/products/${product.slug}`} className="m-2 flex-grow-0"><button id="input-buy">More</button></Link> }
-        { wishlist && <Link href="/" className="m-2 flex-grow-0"><RemoveFromWishlist /></Link> }
+        { wishlist && <div className="m-2 flex-grow-0">
+            <RemoveFromWishlist productId={product._id} />
+        </div> }
     </div>
 </div>
     </>)

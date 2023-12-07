@@ -5,6 +5,7 @@ import Nav from '../../(components)/Nav';
 import { APIResponse } from '../../api/responseTypeDef';
 import { UserModel } from '@/db/models/user';
 import { useRouter } from 'next/navigation';
+import { doLogin } from '../login/action';
 
 function Register() {
     const [error, setError] = useState("");
@@ -27,9 +28,7 @@ function Register() {
         if (!response.ok) {
             responseJson.error ? setError(responseJson.error) : setError("An error has occurred");
         } else {
-            // automatically logs in the user
-            // ...
-            // router.push("/");
+            doLogin({ email, password });
         }
     }
 

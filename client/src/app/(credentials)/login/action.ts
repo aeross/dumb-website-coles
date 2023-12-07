@@ -5,9 +5,16 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers"
 
 
-export async function doLogin(data: FormData) {
-    const email = data.get("email");
-    const password = data.get("password");
+export async function doLogin(data: FormData | { email: string, password: string }) {
+    let email: FormDataEntryValue | null = "";
+    let password: FormDataEntryValue |null = "";
+    if (data instanceof FormData) {
+        email = data.get("email");
+        password = data.get("password");
+    } else {
+        email = data.email;
+        password = data.password;
+    }
     
     const loginInputSchema = z.object({
         email: z.string().email(),

@@ -31,7 +31,7 @@ export type UserPayload = Omit<UserModel, "password">
 // defines input validation
 const userInputSchema = z.object({
     name: z.string().optional(),
-    username: z.string(),  // NOTE: also needs to be unique
+    username: z.string().min(1),  // NOTE: also needs to be unique
     email: z.string().email(),
     password: z.string().min(5),
 })
@@ -97,7 +97,10 @@ export default class User {
             });
             const newUser = await db
                 .collection(COLLECTION_USER)
-                .findOne({ _id: new ObjectId(returnValFromInsertOne.insertedId) }) as UserModel
+                .findOne(
+                    { _id: new ObjectId(returnValFromInsertOne.insertedId) },
+                    { projection: { password: 0 } }
+                ) as UserModel
 
             // return newly registered user
             return newUser;
