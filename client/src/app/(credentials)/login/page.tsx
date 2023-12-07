@@ -7,32 +7,6 @@ import ClientFlash from '@/app/components/ClientFlash';
 import { doLogin } from './action';
 
 function Login() {
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // function handleSubmit(e: React.FormEvent) {
-    //     e.preventDefault();
-    //     console.log(email, password)
-    // }
-
-    // async function handleSubmit(data: FormData) {
-    //     "use server"
-    //     // console.log(data, "<<<<");
-
-    //     const res: Response = await fetch("http://localhost:3000/api/login", {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify({ 
-    //             email: data.get("email"), 
-    //             password: data.get("password") 
-    //         })
-    //     })
-    //     const resJson: APIResponse<unknown> = await res.json();
-
-    //     if (!res.ok) {
-    //         let message = resJson.error ? resJson.error : "An error has occured";
-    //         // return redirect
-    //     }
-    // }
 
     return (<>
 <Nav authenticated={false} />
@@ -48,9 +22,7 @@ function Login() {
                     type="email" 
                     id="email"
                     name="email"
-                    className="input-text" 
-                    // value={email}
-                    // onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value) }}
+                    className="input-text"
                 />
             </div>
 
@@ -60,9 +32,7 @@ function Login() {
                     type="password" 
                     id="password"
                     name="password" 
-                    className="input-text" 
-                    // value={password}
-                    // onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setPassword(e.target.value) }}
+                    className="input-text"
                 />
             </div>
 
@@ -70,7 +40,6 @@ function Login() {
                 <button 
                     id="input-submit"
                     type="submit"
-                    // onClick={handleSubmit}
                 >
                     Submit
                 </button>

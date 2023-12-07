@@ -24,6 +24,10 @@ export type UserModelLoginInput = {
     password: string;
 }
 
+// defines the type for payload (user's login info)
+export type UserPayload = Omit<UserModel, "password">
+
+
 // defines input validation
 const userInputSchema = z.object({
     name: z.string().optional(),
@@ -35,14 +39,15 @@ const userInputSchema = z.object({
 
 // Model User -- CRUD
 export default class User {
-    static async getUsers(): Promise<UserModel[]> {
+    static async getUserById(_id: string | ObjectId): Promise<UserModel> {
         const db = await getDb();
 
         const users = (await db
             .collection(COLLECTION_USER)
-            .find({})
-            .project({ password: 0 })
-            .toArray()) as UserModel[];
+            .findOne(
+                { _id: new ObjectId(_id) }, 
+                { projection: { password: 0 } })
+            ) as UserModel
         
         return users;
     }
@@ -60,7 +65,7 @@ export default class User {
             if (!isValidPassword) throw "Invalid credentials";
 
             const payload = {
-                id: user._id,
+                _id: user._id,
                 name: user.name,
                 username: user.username,
                 email: user.email

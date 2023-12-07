@@ -1,15 +1,26 @@
 import User, { UserModelCreateInput } from "@/db/models/user";
 import { NextResponse } from "next/server";
-import { UserModel } from "@/db/models/user";
 import { APIResponse } from "../responseTypeDef";
 import { ZodError } from "zod";
+import { isAuthd } from "@/helpers/auth";
+import JWTHelper from "@/helpers/jwt";
+import { UserPayload } from "@/db/models/user";
+import { cookies } from "next/headers";
 
-// GET /api/users
-export const GET = async () => {
-    const data = await User.getUsers();
-    return Response.json(
+// GET /api/user (get user that is currently logged in)
+export const GET = async (request: Request) => {
+    const userId = request.headers.get("x-user-id");
+    if (!userId) {
+        return new Response(
+            null,
+            { status: 204 }
+        );
+    }
+
+    const data = await User.getUserById(userId);
+    return NextResponse.json<APIResponse<unknown>>(
         // data sent to client
-        { data, message: "Hello from GET /api/users!" },
+        { status: 200, data, message: "Hello from GET /api/users!" },
         // additional info (status code, headers, etc)
         { status: 200 } // default 200 
     );

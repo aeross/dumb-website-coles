@@ -6,12 +6,24 @@ import { IoLogIn } from "react-icons/io5";
 import { GiArchiveRegister } from "react-icons/gi";
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { isAuthd } from '@/helpers/auth';
+import { UserModel } from '@/db/models/user';
 
-function Nav({ authenticated }: { authenticated: boolean }) {
+async function Nav({ authenticated }: { authenticated: boolean }) {
+
+    const res: Response = await fetch("http://localhost:3000/api/users", {
+        headers: { Cookie: cookies().toString() }
+    });
+    const auth = res.status === 200 ? true : false
+
+    const resJson: UserModel | undefined = auth ? (await res.json()).data : undefined;
+    // console.log(resJson);
+
+
     return (
 <div className="w-full h-[76px] bg-slate-50 flex justify-between items-center sticky top-0 z-50 shadow-sm shadow-slate-300 py-4 px-12">
     {/* nav start */}
-    <Link href="/">
+    <Link href="/" className="w-[160px]">
         <img
             className="h-[40px] w-[110px]"
             src="https://upload.wikimedia.org/wikipedia/commons/a/af/Coles.png" 
@@ -19,10 +31,13 @@ function Nav({ authenticated }: { authenticated: boolean }) {
         />
     </Link>
 
+    <div>
+        { auth && <p>Welcome back, <span className="text-bold">{resJson?.name}</span></p> }
+    </div>
 
     {/* nav end */}
     <div className="flex flex-row justify-end gap-1">
-    { authenticated 
+    { auth 
     ?
         (<>
             <Link href="/wishlist" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">

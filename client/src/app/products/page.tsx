@@ -8,14 +8,17 @@ import { ProductModel } from '@/db/models/product'
 
 import { revalidatePath } from "next/cache";
 import { APIResponse } from '../api/responseTypeDef'
+import { cookies } from 'next/headers'
 
 async function Products() {
-    const response: Response = await fetch("http://localhost:3000/api/products");
+    const response: Response = await fetch("http://localhost:3000/api/products", {
+        headers: { Cookie: cookies().toString() }
+    });
     const responseJson: APIResponse<ProductModel[]> = await response.json();
     const data = responseJson.data;
     
     // if the data on the server has changed, uncomment this code below
-    // revalidatePath("/products");
+    revalidatePath("/products");
 
     return (<>
         <Nav authenticated={true} />
@@ -31,7 +34,6 @@ async function Products() {
         
 
         <Pagination />
-        <Footer />
     </>)
 }
 

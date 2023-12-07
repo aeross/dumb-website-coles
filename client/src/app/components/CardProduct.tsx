@@ -17,9 +17,9 @@ function Card(
             </div>
             <div className="m-2">
                 <Link href={`/products/${product.slug}`} className="hover:cursor-pointer">
-                    <h2 className="text-bold hover:underline">{product.name}</h2>
+                    <h2 className="text-bold text-sm hover:underline">{product.name}</h2>
                 </Link>
-                <p className="text-md">{product.price ? toDollarFormat(product.price) : "price unavailable"}</p>
+                <p className="text-md text-sm">{product.price ? toDollarFormat(product.price) : "price unavailable"}</p>
             </div>
         </div>
         { !wishlist && <Link href={`/products/${product.slug}`} className="m-2"><button id="input-buy">buy now</button></Link> }
