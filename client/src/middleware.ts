@@ -7,7 +7,6 @@ import { isAuthd } from "./helpers/auth";
 // server auth
 export async function middleware(request: NextRequest) {
     if (request.url.includes("/api")) {
-        console.log(request.method, request.url)
         // get token from cookies
         const tokenVal = isAuthd();
 

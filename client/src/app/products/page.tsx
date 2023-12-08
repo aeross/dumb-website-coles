@@ -16,7 +16,8 @@ function Products() {
 
     async function fetchProducts(
         search?: string | null,
-        pagination?: { page: number, limit: number } | null
+        pagination?: { page: number, limit: number } | null,
+        restart?: boolean
     ) {
         let url = "http://localhost:3000/api/products?";
         if (search) url += `search=${search}`
@@ -25,9 +26,11 @@ function Products() {
         const response: Response = await fetch(url);
         const responseJson: APIResponse<ProductModel[]> = await response.json();
         let products = responseJson.data;
+
         
         if (products && products.length > 0) {
-            if (data) {
+            // && !(search && pagination?.page === 1)
+            if (data && !restart) {
                 setData([...data].concat(products));
             } else {
                 setData(products);
@@ -35,12 +38,16 @@ function Products() {
         } else {
             setHasMore(false);
         }
+
+        if (restart) {
+            setPage(1);
+            setHasMore(true);
+        }
     }
 
     // initial fetch
     useEffect(() => {
-        setPage(1);
-        fetchProducts(search, { page: 1, limit });
+        fetchProducts(search, { page: 1, limit }, true);
     }, [search]);
 
     // more fetch
