@@ -1,24 +1,37 @@
-import Footer from '@/app/(components)/Footer';
-import Nav from '../../(components)/Nav';
 import React from 'react'
 import { APIResponse } from '@/app/api/responseTypeDef';
 import { ProductModel } from '@/db/models/product';
 import { toDollarFormat } from '@/helpers/toDollarFormat';
 import AddToWishlist from '@/app/(components)/AddToWishlist';
+import { WishlistModel } from '@/db/models/wishlist';
+import { cookies } from 'next/headers';
 
 
 async function ProductDetail({ params }: { params: { slug: string } }) {
 
     // request to backend: find product by id
     const slug = params.slug;
-    const response: Response = await fetch(`http://localhost:3000/api/products/${slug}`);
-    const responseJson: APIResponse<ProductModel> = await response.json();
+    const resProduct: Response = await fetch(`http://localhost:3000/api/products/${slug}`);
+    const resProductJson: APIResponse<ProductModel> = await resProduct.json();
     
-    if (responseJson.error) {
-        throw new Error(responseJson.error);
+    if (!resProduct.ok) {
+        throw new Error(resProductJson.error);
     }
-    const data = responseJson.data;
+    const data = resProductJson.data;
     
+    // find if this product is already in user's wishlist
+    let isInWishlist = false;
+    const resWishlist: Response = await fetch("http://localhost:3000/api/wishlist", {
+        headers: { Cookie: cookies().toString() }
+    });
+    const resWishlistJson: APIResponse<ProductModel[]> = await resWishlist.json();
+
+    if (!resWishlist.ok) {
+        throw new Error(resWishlistJson.error);
+    }
+    const wishlists = resWishlistJson.data?.map(product => product.slug);
+    if (wishlists?.includes(slug)) isInWishlist = true;
+
     return (<>
 
     { data && (
@@ -46,7 +59,14 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
                         </div>
                     </div>
 
-                    <AddToWishlist productId={data._id} />
+                    { isInWishlist 
+                    ? 
+                        <button className="w-44 mb-2 py-[8px] px-[18px] border-[1px] border-black rounded-[14px] cursor-not-allowed" disabled>
+                            Added to Wishlist
+                        </button> 
+                    : 
+                        <AddToWishlist productId={data._id} /> 
+                    }
                 </div>
             </div>
 
@@ -56,8 +76,6 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
             </div>
         </div>
     ) }
-
-    <Footer />
     </>)
 }
 
