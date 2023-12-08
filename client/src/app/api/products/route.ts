@@ -1,14 +1,22 @@
-import Product, { ProductModel } from "@/db/models/product";
-import User from "@/db/models/user";
-import { NextResponse } from "next/server";
+import Product, { FetchProductOptions } from "@/db/models/product";
 
-// GET /api/users
-export const GET = async () => {
-    const data = await Product.getProducts();
+// GET /api/products
+export const GET = async (request: Request) => {
+    const url = new URL(request.url);
+
+    let searchURL = url.searchParams.get("search");
+    let pageURL = url.searchParams.get("page");
+    let limitURL = url.searchParams.get("limit");
+    let search: string | undefined, pagination: { page: number, limit: number } | undefined;
+    if (searchURL) search = searchURL;
+    if (pageURL && limitURL) {
+        pagination = { page: Number(pageURL), limit: Number(limitURL) }
+    }
+
+    const input: FetchProductOptions = { search, pagination };
+    const data = await Product.getProducts(input);
     return Response.json(
-        // data sent to client
         { data, message: "Hello from GET /api/products!" },
-        // additional info (status code, headers, etc)
-        { status: 200 } // default 200 
+        { status: 200 }
     );
 };

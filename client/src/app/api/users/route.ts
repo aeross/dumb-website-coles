@@ -2,10 +2,6 @@ import User, { UserModelCreateInput } from "@/db/models/user";
 import { NextResponse } from "next/server";
 import { APIResponse } from "../responseTypeDef";
 import { ZodError } from "zod";
-import { isAuthd } from "@/helpers/auth";
-import JWTHelper from "@/helpers/jwt";
-import { UserPayload } from "@/db/models/user";
-import { cookies } from "next/headers";
 
 // GET /api/user (get user that is currently logged in)
 export const GET = async (request: Request) => {

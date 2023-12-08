@@ -40,7 +40,13 @@ export const POST = async (request: Request) => {
     }
 
     // ensure productId is valid
-    // TODO: ...
+    const product = await Product.getProductById(productId);
+    if (!product) {
+        return NextResponse.json<APIResponse<unknown>>(
+            { status: 400, error: "Invalid product id" },
+            { status: 400 }
+        )
+    }
 
     const data = await Wishlist.addWishlist(userId, productId);
 
@@ -64,7 +70,13 @@ export const DELETE = async (request: Request) => {
     }
 
     // ensure productId is valid
-    // TODO: ...
+    const product = await Product.getProductById(productId);
+    if (!product) {
+        return NextResponse.json<APIResponse<unknown>>(
+            { status: 400, error: "Invalid product id" },
+            { status: 400 }
+        )
+    }
 
     const deleted = await Wishlist.deleteWishlist(userId, productId);
     return NextResponse.json<APIResponse<unknown>>(

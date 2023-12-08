@@ -7,9 +7,9 @@ import { GiArchiveRegister } from "react-icons/gi";
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { UserModel } from '@/db/models/user';
+import Search from './Search';
 
 async function Nav() {
-
     const res: Response = await fetch("http://localhost:3000/api/users", {
         headers: { Cookie: cookies().toString() }
     });
@@ -20,7 +20,7 @@ async function Nav() {
     return (
 <div className="w-full h-[76px] bg-slate-50 flex justify-between items-center sticky top-0 z-50 shadow-sm shadow-slate-300 py-4 px-12">
     {/* nav start */}
-    <Link href="/" className="w-[160px]">
+    <Link href="/" className="w-[140px]">
         <img
             className="h-[40px] w-[110px]"
             src="https://upload.wikimedia.org/wikipedia/commons/a/af/Coles.png" 
@@ -28,10 +28,13 @@ async function Nav() {
         />
     </Link>
 
-    <div>
+    {/* <div>
         { auth && (
             <p>Welcome back, <span className="text-bold">{resJson?.name ? resJson.name : "unknown"}</span></p>
         ) }
+    </div> */}
+    <div>
+        <Search />
     </div>
 
     {/* nav end */}

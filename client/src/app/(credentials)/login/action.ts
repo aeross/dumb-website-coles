@@ -7,7 +7,7 @@ import { cookies } from "next/headers"
 
 export async function doLogin(data: FormData | { email: string, password: string }) {
     let email: FormDataEntryValue | null = "";
-    let password: FormDataEntryValue |null = "";
+    let password: FormDataEntryValue | null = "";
     if (data instanceof FormData) {
         email = data.get("email");
         password = data.get("password");
