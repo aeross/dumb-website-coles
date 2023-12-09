@@ -42,9 +42,13 @@ async function Nav() {
     { auth 
     ?
         (<>
-            <Link href="/wishlist" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+            <Link href="/products" className="hover:text-red-700 px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
                 <FaClipboardList className="text-3xl p-1" />
-                Wishlists
+                Products
+            </Link>
+            <Link href="/wishlist" className="hover:text-red-700 px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+                <FaClipboardList className="text-3xl p-1" />
+                Wishlist
             </Link>
             <form action={ async () => {
                 "use server"
@@ -52,7 +56,7 @@ async function Nav() {
                 redirect("/login");
             } }>
                 <button 
-                    className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center"
+                    className="hover:text-red-700 px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center"
                 >
                     <FaUser className="text-3xl p-1" />
                     Log Out
@@ -61,11 +65,11 @@ async function Nav() {
         </>) 
     :
         (<>
-            <Link href="/login" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+            <Link href="/login" className="hover:text-red-700 px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
                 <IoLogIn className="text-3xl p-1" />
                 Log In
             </Link>
-            <Link href="/register" className="px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
+            <Link href="/register" className="hover:text-red-700 px-4 py-2 rounded-lg text-xs hover:bg-slate-100 hover:cursor-pointer hover:underline flex flex-col justify-center items-center">
                 <GiArchiveRegister className="text-3xl p-1" />
                 Sign Up
             </Link>

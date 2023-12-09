@@ -6,7 +6,6 @@ import Product from "@/db/models/product";
 
 // GET all products in a logged-in user's wishlist
 export const GET = async (request: Request) => {
-    console.log("hellow")
     const userId = request.headers.get("x-user-id");
     const wishlists = (await Wishlist.getWishlists()).filter(wishlist => (
         wishlist.userId.equals(userId)
