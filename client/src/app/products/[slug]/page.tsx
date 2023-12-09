@@ -3,8 +3,8 @@ import { APIResponse } from '@/app/api/responseTypeDef';
 import { ProductModel } from '@/db/models/product';
 import { toDollarFormat } from '@/helpers/toDollarFormat';
 import AddToWishlist from '@/app/(components)/AddToWishlist';
-import { WishlistModel } from '@/db/models/wishlist';
 import { cookies } from 'next/headers';
+import CarouselComponent from '../../(components)/Carousel';
 
 
 async function ProductDetail({ params }: { params: { slug: string } }) {
@@ -37,14 +37,8 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
     { data && (
         <div className="my-12 mx-24">
             <div className="grid grid-cols-2 gap-10">
-                <div>
-                    <img 
-                        src={data.images ? data.images[0] : "-"} 
-                        alt="product image"
-                        className="h-[300px] w-full object-cover rounded-xl"
-                    />
-                </div>
-                <div className="flex flex-col justify-between">
+                <CarouselComponent images={data.images} />
+                <div className="flex flex-col justify-between ml-10">
                     <div>
                         <h2 className="text-bold text-xl pb-6 pt-2">{data.name}</h2>
                         <p className="py-2">{data.price ? toDollarFormat(data.price) : "price unavailable"}</p>
