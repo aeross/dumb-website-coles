@@ -13,13 +13,13 @@ function Products() {
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const limit = 5;  // hard-coded
-
+    console.log(process.env.NEXT_PUBLIC_URL);
     async function fetchProducts(
         search?: string | null,
         pagination?: { page: number, limit: number } | null,
         restart?: boolean
     ) {
-        let url = "http://localhost:3000/api/products?";
+        let url = process.env.NEXT_PUBLIC_URL + "/api/products?";
         if (search) url += `search=${search}`
         if (pagination) url += `&page=${pagination.page}&limit=${pagination.limit}`
     

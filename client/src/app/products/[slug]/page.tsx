@@ -11,7 +11,7 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
 
     // request to backend: find product by id
     const slug = params.slug;
-    const resProduct: Response = await fetch(`http://localhost:3000/api/products/${slug}`);
+    const resProduct: Response = await fetch(process.env.NEXT_PUBLIC_URL + `/api/products/${slug}`);
     const resProductJson: APIResponse<ProductModel> = await resProduct.json();
     
     if (!resProduct.ok) {
@@ -21,7 +21,7 @@ async function ProductDetail({ params }: { params: { slug: string } }) {
     
     // find if this product is already in user's wishlist
     let isInWishlist = false;
-    const resWishlist: Response = await fetch("http://localhost:3000/api/wishlist", {
+    const resWishlist: Response = await fetch(process.env.NEXT_PUBLIC_URL + "/api/wishlist", {
         headers: { Cookie: cookies().toString() }
     });
     const resWishlistJson: APIResponse<ProductModel[]> = await resWishlist.json();

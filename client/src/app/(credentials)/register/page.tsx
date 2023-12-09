@@ -17,7 +17,7 @@ function Register() {
     const [password, setPassword] = useState("");
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        const response: Response = await fetch("http://localhost:3000/api/users", {
+        const response: Response = await fetch(process.env.NEXT_PUBLIC_URL + "/api/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, username, email, password })

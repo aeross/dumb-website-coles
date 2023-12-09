@@ -7,7 +7,7 @@ function RemoveFromWishlist({ productId }: { productId: ObjectId | string }) {
     const router = useRouter();
 
     async function removeFromWishlist() {
-        const res = await fetch("http://localhost:3000/api/wishlist", {
+        const res = await fetch(process.env.NEXT_PUBLIC_URL + "/api/wishlist", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ productId })

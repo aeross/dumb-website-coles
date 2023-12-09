@@ -10,7 +10,7 @@ import { UserModel } from '@/db/models/user';
 import Search from './Search';
 
 async function Nav() {
-    const res: Response = await fetch("http://localhost:3000/api/users", {
+    const res: Response = await fetch(process.env.NEXT_PUBLIC_URL + "/api/users", {
         headers: { Cookie: cookies().toString() }
     });
     const auth = res.status === 200 ? true : false

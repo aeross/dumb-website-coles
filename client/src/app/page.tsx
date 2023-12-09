@@ -5,9 +5,10 @@ import { ProductModel } from "@/db/models/product"
 import { APIResponse } from './api/responseTypeDef'
 
 export default async function Home() {
-  const response: Response = await fetch("http://localhost:3000/api/products?limit=5&page=1", {
+  const response: Response = await fetch(process.env.NEXT_PUBLIC_URL + "/api/products?limit=5&page=1", {
       headers: { Cookie: cookies().toString() }
   });
+  console.log(process.env.NEXT_PUBLIC_URL);
   const responseJson: APIResponse<ProductModel[]> = await response.json();
   const data = responseJson.data;
 

@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 import { cookies } from 'next/headers';
 
 async function Wishlist() {
-    const res: Response = await fetch("http://localhost:3000/api/wishlist", {
+    const res: Response = await fetch(process.env.NEXT_PUBLIC_URL + "/api/wishlist", {
         headers: { Cookie: cookies().toString() }
     });
     const resJson: APIResponse<ProductModel[]> = await res.json();

@@ -8,7 +8,7 @@ function AddToWishlist({ productId }: { productId: ObjectId | string }) {
     const router = useRouter();
 
     async function addToWishlist() {
-        const response: Response = await fetch("http://localhost:3000/api/wishlist", {
+        const response: Response = await fetch(process.env.NEXT_PUBLIC_URL + "/api/wishlist", {
             method: "POST",
             body: JSON.stringify({ productId })
         })
