@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 
 function CarouselComponent({ images }: { images: string[] | undefined }) {
+    const [i, setI] = useState(0);
+    
     if (!images) {
         return (<>
             <div>
@@ -9,12 +11,11 @@ function CarouselComponent({ images }: { images: string[] | undefined }) {
                     src="-"
                     alt="product image"
                     className="h-[300px] w-full object-cover rounded-xl"
-                />
+                    />
             </div>
         </>);
     }
-
-    const [i, setI] = useState(0);
+    
     const end = images.length;
     return (<>
         <div className="flex mx-3">
